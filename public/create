@@ -25,6 +25,6 @@ BLUE='\033[0;94m'
 NC='\033[0m' # No Color
 
 # Have fun!
-echo -e "${GREEN}MailCarrier installed! What's next:${NC}"
+echo -e "${GREEN}MailCarrier installed! What's next:${NC}\n"
 echo -e "• Review your ${BLUE}database env variables${NC}"
 echo -e "• Complete the installation by running ${BLUE}php artisan mailcarrier:install${NC}\n"
