@@ -9,7 +9,7 @@ ENV=$(sed '/^VITE_/d' .env.example)
 ENV=$(echo "$ENV" | sed '/^PUSHER_/d')
 ENV=$(echo "$ENV" | sed '/^BROADCAST_DRIVER/d')
 ENV=$(echo "$ENV" | sed '/^SESSION_/d')
-ENV=$(echo -e "$ENV\n# MailCarrier\nMAILCARRIER_AUTH_GUARD=auth:sanctum")
+ENV=$(echo -e "$ENV\n\n# MailCarrier\nMAILCARRIER_AUTH_GUARD=auth:sanctum")
 
 echo "$ENV" > .env.example
 echo "$ENV" > .env
