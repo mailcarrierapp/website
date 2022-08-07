@@ -29,4 +29,7 @@ export const SIDEBAR = [
 	{ text: 'Getting started', header: true },
 	{ text: 'Installation', link: 'docs/getting-started/installation' },
 	{ text: 'Authentication', link: 'docs/getting-started/authentication' },
+
+	{ text: 'Examples', header: true },
+	{ text: 'Installing a social provider', link: 'docs/examples/other-social-provider' },
 ];

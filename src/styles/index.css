@@ -41,6 +41,11 @@ nav ul {
 	padding-left: 2rem;
 }
 
+.content > section ol {
+	list-style-type: decimal;
+	padding-left: 2rem;
+}
+
 .content > section > * + * {
 	margin-top: 1.25rem;
 }
