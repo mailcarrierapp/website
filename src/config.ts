@@ -12,10 +12,6 @@ export const OPEN_GRAPH = {
 	twitter: 'theraloss',
 };
 
-export const KNOWN_LANGUAGES = {
-	English: 'en',
-};
-
 export const GITHUB_EDIT_URL = `https://github.com/mailcarrierapp/docs/blob/master/docs/`;
 
 export const COMMUNITY_INVITE_URL = null;
@@ -28,15 +24,9 @@ export const COMMUNITY_INVITE_URL = null;
 //   apiKey: 'XXXXXXXXXX',
 // }
 
-export const SIDEBAR = {
-	en: [
-		{ text: '', header: true },
-		{ text: 'Section Header', header: true },
-		{ text: 'Introduction', link: 'en/introduction' },
-		{ text: 'Page 2', link: 'en/page-2' },
-		{ text: 'Page 3', link: 'en/page-3' },
-
-		{ text: 'Another Section', header: true },
-		{ text: 'Page 4', link: 'en/page-4' },
-	],
-};
+export const SIDEBAR = [
+	{ text: '', header: true },
+	{ text: 'Getting started', header: true },
+	{ text: 'Installation', link: 'docs/getting-started/installation' },
+	{ text: 'Authentication', link: 'docs/getting-started/authentication' },
+];
