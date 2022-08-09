@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@algolia/client-search": "^4.13.1",
+    "@astrojs/mdx": "^0.8.1",
     "@docsearch/css": "^3.1.0",
     "@docsearch/react": "^3.1.0",
     "@types/react": "^17.0.45",
@@ -22,9 +23,9 @@
     "unist-util-remove": "^3.1.0"
   },
   "devDependencies": {
-    "@astrojs/preact": "^0.5.2",
-    "@astrojs/react": "^0.4.2",
-    "@astrojs/tailwind": "^0.2.5",
-    "astro": "^1.0.0-rc.7"
+    "@astrojs/preact": "^1.0.0",
+    "@astrojs/react": "^1.0.0",
+    "@astrojs/tailwind": "^1.0.0",
+    "astro": "^1.0.0"
   }
 }

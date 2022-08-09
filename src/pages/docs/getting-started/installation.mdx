@@ -3,6 +3,8 @@ title: Installation
 description: Install MailCarrier
 layout: ../../../layouts/MainLayout.astro
 ---
+import Aside from '~/components/Aside.astro';
+
 Installing MailCarrier is just one command away!
 
 ### Prerequisites
@@ -24,8 +26,9 @@ curl "https://mailcarrier.app/create" | bash
 
 It will clone a fresh **Laravel** application in a folder named `mailcarrier`, install MailCarrier and the needed dependencies.
 
-> **What's that file?**  
-> Wondering what's the content of that bash file? Check it out [on GitHub](https://github.com/mailcarrierapp/website/blob/master/public/create), we're always 100% open and secure.
+<Aside type="note" title="What's that file?">
+Wondering what's the content of that bash file? Check it out [on GitHub](https://github.com/mailcarrierapp/website/blob/master/public/create), we're always 100% open and secure.
+</Aside>
 
 #### 2. Setup your database
 Once the first setup is over, go and edit your `.env` file inside your brand new `mailcarrier` application and edit the **database** environment variables according, for example:
