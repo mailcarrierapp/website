@@ -3,6 +3,8 @@ title: Authentication
 description: Define how your users will login into MailCarrier
 layout: ../../../layouts/MainLayout.astro
 ---
+import Aside from '~/components/Aside.astro';
+
 MailCarrier allows you to choose between two ways to sign in: **Standard** (Email + Password) or **Social**.
 
 ### Standard
@@ -34,9 +36,10 @@ Once selected, configurations and additional dependencies will be added to your 
 
 <img src="/images/social-auth-instructions.png" alt="Social authentication instructions" class="rounded-lg shadow" />
 
-> **Redirect URL**  
-> The redirect URL must be your App URL with `/auth/callback` at the end.  
-> For convenience, you can use `"${APP_URL}/auth/callback"` as value to automatically inject the App URL, just be sure to properly set the `APP_URL` environment variable.
+<Aside type="caution" title="Redirect URL">
+    The redirect URL must be your App URL with `/auth/callback` at the end.  
+    For convenience, you can use `"${APP_URL}/auth/callback"` as value to automatically inject the App URL, just be sure to properly set the `APP_URL` environment variable.
+</Aside>
 
 #### Other providers
 
@@ -51,8 +54,9 @@ In the page of your provider you will find all the instructions to complete the 
 
 Finally, remember to set the `MAILCARRIER_SOCIAL_AUTH_DRIVER` in your `.env` file to reflect your provider name (all lowercase).  
 
-> **Looking for a real example?**  
-> We got you covered! Take a look at our recipe on [how to integrate Discord](/docs/examples/other-social-provider) as social authentication provider.
+<Aside type="tip" title="Looking for a real example?">
+    We got you covered! Take a look at our recipe on [how to integrate Discord](/docs/examples/other-social-provider) as social authentication provider.
+</Aside>
 
 #### Granting access from social auth
 
@@ -84,5 +88,6 @@ MailCarrier::authorizeSocialAuth(function (\Laravel\Socialite\AbstractUser $user
 });
 ```
 
-> **Inspect the user**  
-> Wanna inspect what's the content the current `$user` variable? Try to write `dd($user);` inside your callback, before any return, and sign in!
+<Aside type="tip" title="Inspect the user">
+    To inspect the content the current `$user` variable, try to write `dd($user);` inside your callback, before any return, and sign in!
+</Aside>

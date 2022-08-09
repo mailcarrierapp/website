@@ -3,6 +3,8 @@ title: API Endpoint
 description: Define how your users will login into MailCarrier
 layout: ../../../layouts/MainLayout.astro
 ---
+import Aside from '~/components/Aside.astro';
+
 To start sending emails, after you [created a template](/docs/sending-mails/creating-templates), you should invoke the `POST /api/send` endpoint, for example:
 
 ```bash
@@ -53,7 +55,8 @@ php artisan mailcarrier:token
 
 <img src="/images/generate-new-token.png" alt="Generate a new token" class="rounded-lg shadow" />
 
-> **Local authentication**  
-> If you don't want to use an authentication system on your local machine, you can leave the `MAILCARRIER_AUTH_GUARD` env blank.
+<Aside type="tip" title="Local authentication">
+  If you don't want to use an authentication system on your local machine, you can leave the `MAILCARRIER_AUTH_GUARD` env blank.
+</Aside>
 
 #### Other authentication methods
