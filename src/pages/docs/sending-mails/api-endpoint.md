@@ -1,0 +1,59 @@
+---
+title: API Endpoint
+description: Define how your users will login into MailCarrier
+layout: ../../../layouts/MainLayout.astro
+---
+To start sending emails, after you [created a template](/docs/sending-mails/creating-templates), you should invoke the `POST /api/send` endpoint, for example:
+
+```bash
+curl -XPOST \
+  -H 'Authorization: Bearer xxxxx' \
+  -H "Content-type: application/json" \
+  -d '{"recipient":"foo@example.org","subject":"My first email","template":"welcome"}' \
+  http://localhost:8000/api/send
+```
+
+That's it. These above are the **only 4 required fields**, explained:
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td width="100px"><code>recipient</code></td>
+      <td>The email recipient. It could be a single value or an array of values when using <code>recipients</code> instead.</td>
+    </tr>
+    <tr>
+      <td><code>subject</code></td>
+      <td>The subject of the email.</td>
+    </tr>
+    <tr>
+      <td><code>template</code></td>
+      <td>The slug of the template to be used.</td>
+    </tr>
+  </tbody>
+</table>
+
+### Sender
+
+WIP
+
+### Authentication
+
+By default the API endpoint is protected by **Laravel Sanctum**, an authentication system based on tokens.  
+To generate a new token you can run the `mailcarrier:token` command and specify a name (e.g. `My service`) to quickly understand who's using it. 
+
+```js
+php artisan mailcarrier:token
+```
+
+<img src="/images/generate-new-token.png" alt="Generate a new token" class="rounded-lg shadow" />
+
+> **Local authentication**  
+> If you don't want to use an authentication system on your local machine, you can leave the `MAILCARRIER_AUTH_GUARD` env blank.
+
+#### Other authentication methods

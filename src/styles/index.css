@@ -256,8 +256,6 @@ pre {
 	padding-right: calc(var(--padding-inline) * 2);
 	margin-left: calc(var(--padding-inline) * -1);
 	margin-right: calc(var(--padding-inline) * -1);
-	font-family: var(--font-mono);
-
 	line-height: 1.5;
 	font-size: 0.85em;
 	overflow-y: hidden;
@@ -269,6 +267,8 @@ table {
 	padding: var(--padding-block) 0;
 	margin: 0;
 	border-collapse: collapse;
+	overflow: hidden;
+	@apply rounded;
 }
 
 /* Zebra striping */
@@ -276,13 +276,13 @@ tr:nth-of-type(odd) {
 	background: var(--theme-bg-hover);
 }
 th {
-	background: var(--color-black);
+	background: #0d1117;
 	color: var(--theme-color);
 	font-weight: bold;
 }
 td,
 th {
-	padding: 6px;
+	padding: 8px 12px;
 	text-align: left;
 }
 

@@ -30,6 +30,10 @@ export const SIDEBAR = [
 	{ text: 'Installation', link: 'docs/getting-started/installation' },
 	{ text: 'Authentication', link: 'docs/getting-started/authentication' },
 
+	{ text: 'Sending mails', header: true },
+	{ text: 'Creating templates', link: 'docs/sending-mails/creating-templates' },
+	{ text: 'API Endpoint', link: 'docs/sending-mails/api-endpoint' },
+
 	{ text: 'Examples', header: true },
 	{ text: 'Installing a social provider', link: 'docs/examples/other-social-provider' },
 ];
