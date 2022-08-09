@@ -96,6 +96,7 @@ const sidebarSections = SIDEBAR.reduce((col, item, i) => {
 		color: inherit;
 		text-decoration: none;
 		display: block;
+		@apply rounded;
 	}
 	.nav-link a:hover,
 	.nav-link a:focus {
@@ -106,7 +107,6 @@ const sidebarSections = SIDEBAR.reduce((col, item, i) => {
 		color: var(--theme-text-accent);
 		background-color: var(--theme-bg-accent);
 		font-weight: 600;
-		@apply rounded;
 	}
 
 	:global(:root.theme-dark) .nav-link a[aria-current="page"] {
