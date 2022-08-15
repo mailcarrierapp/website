@@ -1,8 +1,8 @@
 ---
 import MoreMenu from "../RightSidebar/MoreMenu.astro";
 
-const { content, githubEditUrl } = Astro.props;
-const title = content.title;
+const { frontmatter, githubEditUrl } = Astro.props;
+const title = frontmatter.title;
 ---
 
 <article id="article" class="content">

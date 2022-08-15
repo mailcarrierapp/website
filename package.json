@@ -1,5 +1,5 @@
 {
-  "name": "@example/docs",
+  "name": "@mailcarrier/website",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -10,7 +10,6 @@
   },
   "dependencies": {
     "@algolia/client-search": "^4.13.1",
-    "@astrojs/mdx": "^0.8.1",
     "@docsearch/css": "^3.1.0",
     "@docsearch/react": "^3.1.0",
     "@types/react": "^17.0.45",
@@ -23,6 +22,7 @@
     "unist-util-remove": "^3.1.0"
   },
   "devDependencies": {
+    "@astrojs/mdx": "^0.9.0",
     "@astrojs/preact": "^1.0.0",
     "@astrojs/react": "^1.0.0",
     "@astrojs/tailwind": "^1.0.0",
