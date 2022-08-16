@@ -4,6 +4,7 @@ description: Define how your users will login into MailCarrier
 layout: ../../../layouts/MainLayout.astro
 ---
 import Aside from '~/components/Aside.astro';
+import Image from '~/components/Image.astro';
 
 To start sending emails, after you [created a template](/docs/getting-started/your-first-template), you should invoke the `POST /api/send` endpoint, for example:
 
@@ -73,7 +74,7 @@ To generate a new token you can run the `mailcarrier:token` command and specify 
 php artisan mailcarrier:token
 ```
 
-<img src="/images/generate-new-token.png" alt="Generate a new token" class="rounded-lg shadow-md dark:border dark:border-slate-500 dark:border-opacity-40" />
+<Image src="/images/generate-new-token.png" alt="Generate a new token" />
 
 <Aside type="tip" title="Local authentication">
   If you don't want to use an authentication system on your local machine, you can leave the `MAILCARRIER_AUTH_GUARD` env blank.

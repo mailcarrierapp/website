@@ -4,6 +4,7 @@ description: Learn how to create your first template and layout
 layout: ../../../layouts/MainLayout.astro
 ---
 import Aside from '~/components/Aside.astro';
+import Image from '~/components/Image.astro';
 
 Everything in MailCarrier goes around two concepts: **Layouts** and **Templates**.
 
@@ -12,7 +13,7 @@ Everything in MailCarrier goes around two concepts: **Layouts** and **Templates*
 Layouts are shared views that can be reused across your templates. They are *not required* to create a template, but generally recommended.  
 A layout will contain the basic HTML structure and everything that should be shared such as **header** and **footer**. By doing so, in your templates you can focus on the actual content.  
 
-IMAGE HERE
+<Image src="/images/default-layout-content.png" alt="Default layout content" />
 
 By default new layouts have a HTML skeleton, feel free to edit as you wish, just remember to place `{include content}` wherever you want to render your template content.
 
@@ -20,7 +21,7 @@ By default new layouts have a HTML skeleton, feel free to edit as you wish, just
 
 Templates are the actual core of MailCarrier: they contains the email content and all the related design.
 
-IMAGE HERE
+<Image src="/images/template-example.png" alt="Example of a template" />
 
 On creation it will automatically generate a `slug` based on the template name: you will use this value to populate the `template` variable when sending a mail.
 

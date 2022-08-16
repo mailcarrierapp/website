@@ -3,11 +3,13 @@ title: Authentication
 description: Define how your users will login into MailCarrier
 layout: ../../../layouts/MainLayout.astro
 ---
+import Image from '~/components/Image.astro';
+
 Let's integrate **Discord** to see how simple is that. Please find all the needed instructions also on the relative [Socialite Discord page](https://socialiteproviders.com/Discord/).
 
 1. Install the provider by running `composer require socialiteproviders/discord`.
 
-<img src="/images/social-auth-other-require.png" alt="Require other social authentication provider" class="rounded-lg shadow-md dark:border dark:border-slate-500 dark:border-opacity-40" />
+<Image src="/images/social-auth-other-require.png" alt="Require other social authentication provider" />
 
 2. Open your `config/services.php` file and add the needed data. You can find it in the Socialite page linked above.
 

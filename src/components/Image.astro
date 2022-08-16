@@ -1,0 +1,10 @@
+---
+// Taken from https://github.com/withastro/docs/blob/4ce7d930a05ead096d69dfe8b95891225b143efd/src/components/Aside.astro
+export interface Props {
+	src: string;
+  alt?: string;
+}
+
+const { src, alt } = Astro.props as Props;
+---
+<img {src} {alt} class="rounded-lg shadow-md dark:border dark:border-slate-500 dark:border-opacity-40" />
