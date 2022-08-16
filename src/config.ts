@@ -29,9 +29,9 @@ export const SIDEBAR = [
 	{ text: 'Getting started', header: true },
 	{ text: 'Installation', link: 'docs/getting-started/installation' },
 	{ text: 'Authentication', link: 'docs/getting-started/authentication' },
+	{ text: 'Your first template', link: 'docs/getting-started/your-first-template' },
 
 	{ text: 'Sending mails', header: true },
-	{ text: 'Creating templates', link: 'docs/sending-mails/creating-templates' },
 	{ text: 'API Endpoint', link: 'docs/sending-mails/api-endpoint' },
 
 	{ text: 'Examples', header: true },
