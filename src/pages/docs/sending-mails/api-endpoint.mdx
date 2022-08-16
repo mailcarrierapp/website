@@ -42,7 +42,27 @@ That's it. These above are the **only 4 required fields**, explained:
 
 ### Sender
 
-WIP
+By default MailCarrier will use, as sender, the values defined by your environment variables `MAIL_FROM_ADDRESS` and `MAIL_FROM_NAME` (which can be empty).  
+You can override these values at runtime when making an API call by defining the `sender` property:
+
+```js
+{
+  // Other variables
+  "sender": "sender@example.org"
+}
+```
+
+Or, specifying the name too:
+
+```js
+{
+  // Other variables
+  "sender": {
+    "email": "sender@example.org",
+    "name": "Sender name"
+  }
+}
+```
 
 ### Authentication
 
@@ -60,3 +80,7 @@ php artisan mailcarrier:token
 </Aside>
 
 #### Other authentication methods
+
+If you don't like the default token-based authentication system or want to use something else, you can install one of the several authentication packages available for Laravel or [build your own](https://laravel.com/docs/9.x/authentication#adding-custom-guards).  
+
+For example, you may want to add Machine-to-Machine SSO authentication such as [FusionAuth](https://github.com/danilopolani/laravel-fusionauth-jwt): just follow the README instructions and update the `MAILCARRIER_AUTH_GUARD` env.
