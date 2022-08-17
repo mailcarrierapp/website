@@ -1,6 +1,5 @@
 ---
 import * as CONFIG from "../../config";
-import AstroLogo from "./AstroLogo.astro";
 import SkipToContent from "./SkipToContent.astro";
 import SidebarToggle from "./SidebarToggle";
 import Search from "./Search";
@@ -13,10 +12,11 @@ import Search from "./Search";
 			<SidebarToggle client:idle />
 		</div>
 		<div class="logo flex">
-			<a href="/">
-				<AstroLogo size={40} />
-				<h1>{CONFIG.SITE.title ?? "Documentation"}</h1>
-			</a>
+			<h1>
+				<a href="/docs">
+					<img src="/images/logos/logo-white.svg" alt="MailCarrier logo" title="MailCarrier documentation" width="220">
+				</a>
+			</h1>
 		</div>
 		<div style="flex-grow: 1;"></div>
 		{CONFIG.ALGOLIA && (
