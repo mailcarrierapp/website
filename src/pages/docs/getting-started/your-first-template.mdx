@@ -31,4 +31,58 @@ When making the HTTP request to send a mail, it's easier to read and understand 
 
 ### Syntax
 
-WIP
+If you're familiar with the most popular JS frameworks, such as *Vue* or *Svelte*, you will find the syntax very easy and friendly: in fact, [**Latte**](https://latte.nette.org/en/syntax) is being used as template engine, providing a fast and expressive way to write your templates.  
+
+On top of it, MailCarrier applies a layer to simplify it even more to who is not familiar with PHP: take a look at the following examples. Of course you can use one or both syntaxes, as you wish.
+
+### Displaying variable
+
+```html
+Hello, {{ name }}!
+
+<a href="{{ callToAction.url }}">
+  {{ callToAction.label }}
+</a>
+```
+
+Is the equivalent of (Latte):
+
+```html
+Hello, {$name}!
+
+<a href="{$callToAction['url']}">
+  {$callToAction['label']}
+</a>
+```
+
+### Applying filters
+
+```html
+Hello, {{ name|capitalize }}!
+
+<a href="{{ callToAction.url }}">
+  {{ callToAction.label }}
+</a>
+```
+
+Is the equivalent of (Latte):
+
+```html
+Hello, {$name}!
+
+<a href="{$callToAction['url']}">
+  {$callToAction['label']}
+</a>
+```
+
+You can read more on Filters [here](https://latte.nette.org/en/filters).
+
+### Attributes
+
+You can mix as well both syntaxes, for example by using attributes and variables together.  
+
+```html
+<ul n:if="$items">
+	<li n:foreach="$items as $item">{{ item|capitalize }}</li>
+</ul>
+```
