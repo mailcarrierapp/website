@@ -65,6 +65,17 @@ Or, specifying the name too:
 }
 ```
 
+### Sender
+
+You can specify a **trigger** to know what application sent that specific email. It's just a plain text field, used only for display and search purposes, but can be very useful when using MailCarrier in a multi-services architecture.
+
+```js
+{
+  // Other variables
+  "trigger": "App 1"
+}
+```
+
 ### Authentication
 
 By default the API endpoint is protected by **Laravel Sanctum**, an authentication system based on tokens.  
