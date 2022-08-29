@@ -33,6 +33,19 @@ export const SIDEBAR = [
 
 	{ text: 'Sending mails', header: true },
 	{ text: 'API Endpoint', link: 'docs/sending-mails/api-endpoint' },
+	{ text: 'Middleware', link: 'docs/sending-mails/middleware' },
+	{ text: 'Recipient', link: 'docs/sending-mails/recipient' },
+	{ text: 'Cc & Bcc', link: 'docs/sending-mails/cc-bcc' },
+	{ text: 'Variables', link: 'docs/sending-mails/variables' },
+	{ text: 'Attachments', link: 'docs/sending-mails/attachments' },
+	{ text: 'Logs', link: 'docs/sending-mails/logs' },
+	{ text: 'Queue', link: 'docs/sending-mails/queue' },
+
+	{ text: 'Configuration', header: true },
+	{ text: 'API Endpoint', link: 'docs/configuration/api-endpoint' },
+	{ text: 'Logs', link: 'docs/configuration/logs' },
+	{ text: 'Attachments', link: 'docs/configuration/attachments' },
+	{ text: 'Queue', link: 'docs/configuration/queue' },
 
 	{ text: 'Examples', header: true },
 	{ text: 'Installing a social provider', link: 'docs/examples/other-social-provider' },
