@@ -57,3 +57,7 @@ blockquote code {
 		margin-right: 0;
 	}
 }
+
+.code-container > code > .line {
+	min-height: 20px;
+}

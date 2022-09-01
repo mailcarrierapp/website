@@ -1,0 +1,36 @@
+---
+title: Middleware
+description: Intercept and apply a middleware before and after sending a mail 
+layout: ../../../layouts/MainLayout.astro
+---
+import Aside from '~/components/Aside.astro';
+import Image from '~/components/Image.astro';
+
+MailCarrier provides a "middleware" to call and apply your custom code *before* and *after* sending an email. This could be useful for logging purposes or change at runtime some configuration values.  
+
+To get started open your `app/Providers/AppServiceProviders.php`: here you will find a `MailCarrier::sending` callback where you can access the [`GenericMailDto`](https://github.com/mailcarrierapp/mailcarrier/blob/master/src/Dto/GenericMailDto.php) data such as recipient and variables.
+
+```php
+MailCarrier::sending(function (GenericMailDto $mail, \Closure $next): void {
+    // Do something before
+    $next();
+    // Do something after
+});
+```
+
+The only important thing you have to remember is to call `$next()` to proceed with the flow and send the email.  
+For example, we could prevent sending emails when the sender is not from our domain:
+
+```php
+MailCarrier::sending(function (GenericMailDto $mail, \Closure $next): void {
+    if (!str_ends_with($mail->sender?->email, '@mailcarrier.app')) {
+      return;
+    }
+
+    $next();
+});
+```
+
+<Aside type="note" title="Nullable properties">
+Please note that some properties of the DTO are nullable, that's why we use the [null-safe operator](https://php.watch/versions/8.0/null-safe-operator) to access the sender email.
+</Aside>
