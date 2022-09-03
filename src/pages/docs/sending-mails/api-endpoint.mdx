@@ -76,6 +76,18 @@ You can specify a **trigger** to know what application sent that specific email.
 }
 ```
 
+### Cc & Bcc
+
+You can specify a **cc** or **bcc** by providing their relative keys to your payload:
+
+```js
+{
+  // Other variables
+  "cc": "cc@example.org",
+  "bcc": "bcc@example.org"
+}
+```
+
 ### Authentication
 
 By default the API endpoint is protected by **Laravel Sanctum**, an authentication system based on tokens.  
