@@ -38,6 +38,7 @@ export const SIDEBAR = [
 	{ text: 'Variables', link: 'docs/sending-mails/variables' },
 	{ text: 'Attachments', link: 'docs/sending-mails/attachments' },
 	{ text: 'Queue', link: 'docs/sending-mails/queue' },
+	{ text: 'Errors', link: 'docs/sending-mails/errors' },
 
 	{ text: 'Configuration', header: true },
 	{ text: 'API Endpoint', link: 'docs/configuration/api-endpoint' },
