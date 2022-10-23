@@ -42,8 +42,8 @@ export const SIDEBAR = [
 
 	{ text: 'Configuration', header: true },
 	{ text: 'API Endpoint', link: 'docs/configuration/api-endpoint' },
-	{ text: 'Attachments', link: 'docs/configuration/attachments' },
 	{ text: 'Logs', link: 'docs/configuration/logs' },
+	{ text: 'Attachments', link: 'docs/configuration/attachments' },
 	{ text: 'Queue', link: 'docs/configuration/queue' },
 
 	{ text: 'Examples', header: true },
