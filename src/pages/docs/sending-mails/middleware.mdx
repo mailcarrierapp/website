@@ -48,7 +48,7 @@ Taking the example above, we can write a better validation to prevents foreign s
 ```php
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 
-MailCarrier::beforeSending(function (GenericMailDto $mail, \Closure $next): void {
+MailCarrier::beforeSending(function (GenericMailDto $mail): void {
     $isDomainAllowed = str_ends_with($mail->sender->email, '@mailcarrier.app');
 
     if (!is_null($mail->sender) && !$isDomainAllowed) {
