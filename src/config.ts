@@ -6,7 +6,7 @@ export const SITE = {
 
 export const OPEN_GRAPH = {
 	image: {
-		src: '',
+		src: 'https://mailcarrier.app/images/og-image.png',
 		alt: 'MailCarrier'
 	},
 	twitter: 'theraloss',
