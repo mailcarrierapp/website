@@ -33,6 +33,7 @@ export const SIDEBAR = [
 
 	{ text: 'Sending mails', header: true },
 	{ text: 'API Endpoint', link: 'docs/sending-mails/api-endpoint' },
+	{ text: 'Protecting the API', link: 'docs/sending-mails/protecting-api' },
 	{ text: 'Middleware', link: 'docs/sending-mails/middleware' },
 	{ text: 'Recipient', link: 'docs/sending-mails/recipient' },
 	{ text: 'Variables', link: 'docs/sending-mails/variables' },

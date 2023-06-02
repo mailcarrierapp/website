@@ -16,27 +16,112 @@ curl -XPOST \
   http://localhost:8000/api/send
 ```
 
-That's it. These above are the **only 4 required fields**, explained:
+That's it. There are a few other available fields too:
 
 <table>
   <thead>
     <tr>
       <th>Name</th>
+      <th>Type</th>
       <th>Description</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td width="100px"><code>recipient</code></td>
+      <td width="150px">
+        <code>recipient</code>
+        <p class="text-xs text-red-500 mt-1">Required</p>
+      </td>
+      <td>String</td>
       <td>The email recipient. It could be a single value or an array of values when using <code>recipients</code> instead.</td>
     </tr>
     <tr>
-      <td><code>subject</code></td>
+      <td>
+        <code>recipients</code>
+        <p class="text-xs text-slate-400 mt-1 italic">Optional</p>
+      </td>
+      <td>Array</td>
+      <td>An array of recipients, required if <code>recipient</code> is not provided. [Learn more on multiple recipients](/docs/sending-mails/recipient#multiple-recipients).</td>
+    </tr>
+    <tr>
+      <td>
+        <code>subject</code>
+        <p class="text-xs text-red-500 mt-1">Required</p>
+      </td>
+      <td>String</td>
       <td>The subject of the email.</td>
     </tr>
     <tr>
-      <td><code>template</code></td>
+      <td>
+        <code>template</code>
+        <p class="text-xs text-red-500 mt-1">Required</p>
+      </td>
+      <td>String</td>
       <td>The slug of the template to be used.</td>
+    </tr>
+    <tr>
+      <td>
+        <code>sender</code>
+        <p class="text-xs text-slate-400 mt-1 italic">Optional</p>
+      </td>
+      <td>String|Object</td>
+      <td>The sender of the current email. If empty, it will be taken from the app settings. [Learn more on settings](/docs/sending-mails/api-endpoint#sender).</td>
+    </tr>
+    <tr>
+      <td>
+        <code>variables</code>
+        <p class="text-xs text-slate-400 mt-1 italic">Optional</p>
+      </td>
+      <td>Object</td>
+      <td>A key-value object of variables to render the template. [Learn more on variables](/docs/sending-mails/variables).</td>
+    </tr>
+    <tr>
+      <td>
+        <code>enqueue</code>
+        <p class="text-xs text-slate-400 mt-1 italic">Optional</p>
+      </td>
+      <td>Boolean</td>
+      <td>Choose if sending the email in a background queue; might need a [little setup to work](/docs/sending-mails/queue). **Default**: false.</td>
+    </tr>
+    <tr>
+      <td>
+        <code>trigger</code>
+        <p class="text-xs text-slate-400 mt-1 italic">Optional</p>
+      </td>
+      <td>String</td>
+      <td>The trigger name, useful to identify emails coming from multiple sources/applications.</td>
+    </tr>
+    <tr>
+      <td>
+        <code>cc</code>
+        <p class="text-xs text-slate-400 mt-1 italic">Optional</p>
+      </td>
+      <td>String</td>
+      <td>Recipient to put in copy for the current email.</td>
+    </tr>
+    <tr>
+      <td>
+        <code>bcc</code>
+        <p class="text-xs text-slate-400 mt-1 italic">Optional</p>
+      </td>
+      <td>String</td>
+      <td>Recipient to put in hidden copy for the current email.</td>
+    </tr>
+    <tr>
+      <td>
+        <code>attachments</code>
+        <p class="text-xs text-slate-400 mt-1 italic">Optional</p>
+      </td>
+      <td>Array</td>
+      <td>The files to be attached to the email.</td>
+    </tr>
+    <tr>
+      <td>
+        <code>remoteAttachments</code>
+        <p class="text-xs text-slate-400 mt-1 italic">Optional</p>
+      </td>
+      <td>Array</td>
+      <td>List of remote resources to be attached to the email. [Learn more on remote attachments](/docs/sending-mails/attachments#remote-attachments).</td>
     </tr>
   </tbody>
 </table>
@@ -65,17 +150,6 @@ Or, specifying the name too:
 }
 ```
 
-### Trigger
-
-You can specify a **trigger** to know what application sent that specific email. It's just a plain text field, used only for display and search purposes, but can be very useful when using MailCarrier in a multi-services architecture to keep track of who-sent-what.
-
-```js
-{
-  // Other variables
-  "trigger": "App 1"
-}
-```
-
 ### Cc & Bcc
 
 You can specify a **cc** or **bcc** by providing their relative keys to your payload:
@@ -87,24 +161,3 @@ You can specify a **cc** or **bcc** by providing their relative keys to your pay
   "bcc": "bcc@example.org"
 }
 ```
-
-### Authentication
-
-By default the API endpoint is protected by **Laravel Sanctum**, an authentication system based on tokens.  
-To generate a new token you can run the `mailcarrier:token` command and specify a name (e.g. `My service`) to quickly understand who's using it. 
-
-```js
-php artisan mailcarrier:token
-```
-
-<Image src="/images/generate-new-token.png" alt="Generate a new token" />
-
-<Aside type="tip" title="Local authentication">
-  If you don't want to use an authentication system on your local machine, you can leave the `MAILCARRIER_AUTH_GUARD` env blank.
-</Aside>
-
-#### Other authentication methods
-
-If you don't like the default token-based authentication system or want to use something else, you can install one of the several authentication packages available for Laravel or [build your own](https://laravel.com/docs/9.x/authentication#adding-custom-guards).  
-
-For example, you may want to add Machine-to-Machine SSO authentication such as [FusionAuth](https://github.com/danilopolani/laravel-fusionauth-jwt): just follow the README instructions and update the `MAILCARRIER_AUTH_GUARD` env.
