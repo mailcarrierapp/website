@@ -28,6 +28,7 @@ export const SIDEBAR = [
 	{ text: '', header: true },
 	{ text: 'Getting started', header: true },
 	{ text: 'Installation', link: 'docs/getting-started/installation' },
+	{ text: 'Running with Docker', link: 'docs/getting-started/running-docker' },
 	{ text: 'Authentication', link: 'docs/getting-started/authentication' },
 	{ text: 'Your first template', link: 'docs/getting-started/your-first-template' },
 
