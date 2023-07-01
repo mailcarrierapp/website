@@ -39,6 +39,20 @@ MailCarrier::sending(function (GenericMailDto $mail, \Closure $next): void {
 Please note that some properties of the DTO are nullable, that's why we use the [null-safe operator](https://php.watch/versions/8.0/null-safe-operator) to access the sender email.
 </Aside>
 
+You can, eventually, pass a `GenericMailDto` instance to the `$next()` callback to override the original. For example, you can force the sender and always add the template name as mail tag:
+
+```php
+MailCarrier::sending(function (GenericMailDto $mail, \Closure $next): void {
+    $next($mail->clone(
+      sender: 'forced@example.org',
+      tags: [
+        ...$mail->tags,
+        'template:' . $mail->template->name,
+      ],
+    ));
+});
+```
+
 ### Sync Middleware
 The `sending` middleware happens before and after the mail sending, meaning that it could happens even in the background queue if enabled.  
 As said earlier, you must never throw exceptions inside that middleware, that's why MailCarrier provides a `beforeSending` hook that always runs in foreground (API call) and where you can add custom validation, throwing exceptions etc.

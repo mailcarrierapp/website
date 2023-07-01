@@ -39,6 +39,7 @@ export const SIDEBAR = [
 	{ text: 'Recipient', link: 'docs/sending-mails/recipient' },
 	{ text: 'Variables', link: 'docs/sending-mails/variables' },
 	{ text: 'Attachments', link: 'docs/sending-mails/attachments' },
+	{ text: 'Tags & Metadata', link: 'docs/sending-mails/tags-metadata' },
 	{ text: 'Queue', link: 'docs/sending-mails/queue' },
 	{ text: 'Errors', link: 'docs/sending-mails/errors' },
 
