@@ -1,32 +1,10 @@
 {
-  "name": "@mailcarrier/website",
-  "version": "1.0.0",
-  "private": true,
   "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview"
-  },
-  "dependencies": {
-    "@algolia/client-search": "^4.13.1",
-    "@astrojs/sitemap": "^1.2.2",
-    "@docsearch/css": "^3.1.0",
-    "@docsearch/react": "^3.1.0",
-    "@types/react": "^17.0.45",
-    "preact": "^10.7.3",
-    "react": "^18.1.0",
-    "react-dom": "^18.1.0",
-    "rehype-autolink-headings": "^6.1.1",
-    "rehype-slug": "^5.0.1",
-    "remark-directive": "^2.0.1",
-    "unist-util-remove": "^3.1.0"
+    "docs:dev": "npx vitepress dev docs",
+    "docs:build": "npx vitepress build docs",
+    "docs:preview": "npx vitepress preview docs"
   },
   "devDependencies": {
-    "@astrojs/mdx": "^0.9.0",
-    "@astrojs/preact": "^1.0.0",
-    "@astrojs/react": "^1.0.0",
-    "@astrojs/tailwind": "^1.0.0",
-    "astro": "^1.0.0"
+    "vitepress": "^1.0.0-beta.5"
   }
 }
