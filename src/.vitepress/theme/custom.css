@@ -1,0 +1,17 @@
+:root {
+  --vp-c-brand: #4f46e5; /* Indigo 600 */
+  --vp-button-brand-border: #4338ca; /* Indigo 400 */
+  --vp-button-brand-hover-bg: #4338ca; /* Indigo 700 */
+  --vp-button-brand-hover-border: #6366f1; /* Indigo 500 */
+  --vp-button-brand-active-bg: #3730a3; /* Indigo 800 */
+  --vp-button-brand-active-border: #312e81; /* Indigo 900 */
+}
+
+:root.dark {
+  --vp-c-brand: #6366f1; /* Indigo 500 */
+  --vp-button-brand-border: #a5b4fc; /* Indigo 300 */
+  --vp-button-brand-hover-bg: #4f46e5; /* Indigo 600 */
+  --vp-button-brand-hover-border: #818cf8; /* Indigo 400 */
+  --vp-button-brand-active-bg: #4338ca; /* Indigo 700 */
+  --vp-button-brand-active-border: #6366f1; /* Indigo 500 */
+}

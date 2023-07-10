@@ -1,6 +1,8 @@
 ---
 # https://vitepress.dev/reference/default-theme-home-page
 layout: home
+title: 'MailCarrier - Design emails once, send them everywhere'
+titleTemplate: false
 
 hero:
   name: "MailCarrier"
