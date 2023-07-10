@@ -61,7 +61,7 @@ By default are allowed: **images**, **csv**, **xls**, **xlsx**, **pdf** and **zi
 
 ## `disk`
 
-Defined by the `MAILCARRIER_FILESYSTEM_DISK` environment variable (and default to the Laravel default one via `FILESYSTEM_DISK`), represents the default disk used to store attachments for logs (see [log_strategy](`log_strategy`)) or to fetch them when a [remote disk](/docs/sending-mails/attachments#remote-attachments) is used.  
+Defined by the `MAILCARRIER_FILESYSTEM_DISK` environment variable (and default to the Laravel default one via `FILESYSTEM_DISK`), represents the default disk used to store attachments for logs (see [log_strategy](#log-strategy)) or to fetch them when a [remote disk](/docs/sending-mails/attachments#remote-attachments) is used.  
 
 By default it uses the `local` disk (aka your filesystem), but you can use anything such as [S3 (or API-compatible)](https://laravel.com/docs/filesystem#s3-driver-configuration), [FTP](https://laravel.com/docs/filesystem#ftp-driver-configuration), [DropBox](https://www.yellowduck.be/posts/using-dropbox-as-a-laravel-filesystem) or a custom one, as long as it follows the [Laravel Filesystem logic](https://laravel.com/docs/filesystem#custom-filesystems).
 
@@ -110,7 +110,7 @@ An array of additional allowed disk to fetch remote attachment. Useful if you pl
 
 ## `path`
 
-The default path where attachments for logs will be stored (see [log_strategy](`log_strategy`)).  Can be a S3 or similar bucket path too.  
+The default path where attachments for logs will be stored (see [log_strategy](#log-strategy)).  Can be a S3 or similar bucket path too.  
 By default `null` means that they will be stored in the "path root".
 
 ```php
@@ -135,7 +135,7 @@ By default `null` means that they will be stored in the "path root".
 
 Define how (and if) to store attachments for logs purposes when present in a email. It allows three different values:
 
-- `AttachmentLogStrategy::Inline`: attachments will be saved, **encrypted**, in the database. Since it can lead to a big space in your database, the suggestion is to use it combined with [logs pruning](/docs/configuration/logs#prunable_period).  
+- `AttachmentLogStrategy::Inline`: attachments will be saved, **encrypted**, in the database. Since it can lead to a big space in your database, the suggestion is to use it combined with [logs pruning](/docs/configuration/logs#prunable-period).  
 - `AttachmentLogStrategy::Upload`: attachments will be uploaded in your [default disk](#disk) and [path](#path) and its location saved in your log.  
 - `AttachmentLogStrategy::None`: attachments content will not be saved anywhere, but only its name and size for reference.
 
