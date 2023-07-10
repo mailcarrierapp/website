@@ -1,14 +1,13 @@
 ---
-title: Logs
-description: Configuration of logs
-layout: ../../../layouts/MainLayout.astro
+title: Attachments configuration
+description: Define email standard and remote attachments
 ---
-import Aside from '~/components/Aside.astro';
-import Image from '~/components/Image.astro';
+
+# Attachments configuration
 
 All the configuration variables refers to `config/mailcarrier.php` file.
 
-### `max_size`
+## `max_size`
 
 The maximum file size allowed for attachments in kilobytes.
 
@@ -28,7 +27,7 @@ The maximum file size allowed for attachments in kilobytes.
     // ...
 ```
 
-### `mimetypes`
+## `mimetypes`
 
 The allowed mimetypes for attachments preventing malicious files to be sent via email.  
 By default are allowed: **images**, **csv**, **xls**, **xlsx**, **pdf** and **zip**. 
@@ -60,11 +59,11 @@ By default are allowed: **images**, **csv**, **xls**, **xlsx**, **pdf** and **zi
     // ...
 ```
 
-### `disk`
+## `disk`
 
 Defined by the `MAILCARRIER_FILESYSTEM_DISK` environment variable (and default to the Laravel default one via `FILESYSTEM_DISK`), represents the default disk used to store attachments for logs (see [log_strategy](`log_strategy`)) or to fetch them when a [remote disk](/docs/sending-mails/attachments#remote-attachments) is used.  
 
-By default it uses the `local` disk (aka your filesystem), but you can use anything such as [S3 (or API-compatible)](https://laravel.com/docs/9.x/filesystem#s3-driver-configuration), [FTP](https://laravel.com/docs/9.x/filesystem#ftp-driver-configuration), [DropBox](https://www.yellowduck.be/posts/using-dropbox-as-a-laravel-filesystem) or a custom one, as long as it follows the [Laravel Filesystem logic](https://laravel.com/docs/9.x/filesystem#custom-filesystems).
+By default it uses the `local` disk (aka your filesystem), but you can use anything such as [S3 (or API-compatible)](https://laravel.com/docs/filesystem#s3-driver-configuration), [FTP](https://laravel.com/docs/filesystem#ftp-driver-configuration), [DropBox](https://www.yellowduck.be/posts/using-dropbox-as-a-laravel-filesystem) or a custom one, as long as it follows the [Laravel Filesystem logic](https://laravel.com/docs/filesystem#custom-filesystems).
 
 ```php
 'attachments' => [
@@ -86,7 +85,7 @@ By default it uses the `local` disk (aka your filesystem), but you can use anyth
     // ...
 ```
 
-### `additional_disks`
+## `additional_disks`
 
 An array of additional allowed disk to fetch remote attachment. Useful if you plan to use more than one storage, such as one for images, one for documents etc.
 
@@ -109,7 +108,7 @@ An array of additional allowed disk to fetch remote attachment. Useful if you pl
     // ...
 ```
 
-### `path`
+## `path`
 
 The default path where attachments for logs will be stored (see [log_strategy](`log_strategy`)).  Can be a S3 or similar bucket path too.  
 By default `null` means that they will be stored in the "path root".
@@ -132,7 +131,7 @@ By default `null` means that they will be stored in the "path root".
 ```
 
 
-### `log_strategy`
+## `log_strategy`
 
 Define how (and if) to store attachments for logs purposes when present in a email. It allows three different values:
 

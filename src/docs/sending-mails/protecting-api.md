@@ -1,25 +1,24 @@
 ---
 title: API protection
 description: Define the API protection and authentication
-layout: ../../../layouts/MainLayout.astro
 ---
-import Aside from '~/components/Aside.astro';
-import Image from '~/components/Image.astro'; 
+
+# API Protection
 
 By default the API endpoints are protected by **Laravel Sanctum**, an authentication system based on fixed API tokens.  
 To generate a new token you can run the `mailcarrier:token` command and specify a name (e.g. `My service`) to quickly understand who's using it. 
 
-```js
+```shell
 php artisan mailcarrier:token
 ```
 
-<Image src="/images/generate-new-token.png" alt="Generate a new token" />
+![Generate a new token](/images/generate-new-token.png)
 
-<Aside type="tip" title="Local authentication">
+::: tip Local authentication
   If you would like to completely disable the authentication, for example locally, you can leave the `MAILCARRIER_AUTH_GUARD` env blank.
-</Aside>
+:::
 
-#### Other authentication methods
+## Other authentication methods
 
 If you don't like the default token-based authentication system or want to use something else, you can install one of the several authentication packages available for Laravel or [build your own](https://laravel.com/docs/authentication#adding-custom-guards).  
 

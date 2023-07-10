@@ -1,14 +1,13 @@
 ---
-title: API Endpoint
+title: API Endpoint configuration
 description: Configuration of API Endpoint
-layout: ../../../layouts/MainLayout.astro
 ---
-import Aside from '~/components/Aside.astro';
-import Image from '~/components/Image.astro';
+
+# API Endpoint configuration
 
 All the configuration variables refers to `config/mailcarrier.php` file.
 
-### `auth_guard`
+## `auth_guard`
 
 Set by the `MAILCARRIER_AUTH_GUARD` environment variable, defines what's the authentication system of your APIs.  
 By default it's `auth:sanctum`, meaning that API tokens shipped out-of-the-box by MailCarrier will be used, but you can install any authentication system, such as JWTs, Machine-to-Machine (Auth0, FusionAuth etc.) and many more.
@@ -30,9 +29,9 @@ By default it's `auth:sanctum`, meaning that API tokens shipped out-of-the-box b
 ],
 ```
 
-### `extra_middleware`
+## `extra_middleware`
 
-An array of additional [middlewares](https://laravel.com/docs/9.x/middleware#defining-middleware) that you want to apply to the API endpoint.  
+An array of additional [middlewares](https://laravel.com/docs/middleware#defining-middleware) that you want to apply to the API endpoint.  
 These middleware can be third-party or first-party, defined by your `app/Http/Middleware` files.
 
 ```php

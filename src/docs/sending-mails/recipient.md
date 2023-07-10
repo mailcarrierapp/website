@@ -1,25 +1,24 @@
 ---
 title: Recipient
 description: Define the recipient 
-layout: ../../../layouts/MainLayout.astro
 ---
-import Aside from '~/components/Aside.astro';
-import Image from '~/components/Image.astro';
+
+# Recipient
 
 Defining the recipient is as simple as declaring the `recipient` variable that must be a **valid email address**.
 
-```js
+```json
 {
   // Other variables
   "recipient": "foo@example.org"
 }
 ```
 
-### Multiple recipients
+## Multiple recipients
 
 If you need to send the same email to multiple recipients you can do it as well by using the `recipients` key instead of `recipient`:
 
-```js
+```json
 {
   // Other variables
   "recipients": [
@@ -32,7 +31,7 @@ If you need to send the same email to multiple recipients you can do it as well 
 You can even define specific [variables](/docs/sending-mails/variables), [cc, bcc](/docs/sending-mails/api-endpoint#cc-bcc) and more for each single recipient.  
 Per-recipient data will be merged with *global data*, take an example to this snippet:
 
-```js
+```json
 {
   // Other variables
   "recipients": [

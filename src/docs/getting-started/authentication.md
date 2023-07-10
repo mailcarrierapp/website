@@ -1,48 +1,47 @@
 ---
 title: Authentication
 description: Define how your users will login into MailCarrier
-layout: ../../../layouts/MainLayout.astro
 ---
-import Aside from '~/components/Aside.astro';
-import Image from '~/components/Image.astro';
+
+# Authentication
 
 MailCarrier allows you to choose between two ways to sign in: **Standard** (Email + Password) or **Social**.
 
-### Standard
+## Standard
 
 During the installation (`php artisan mailcarrier:install`) you should choose to *not enable social authentication*.  
 From that point, you can run from your terminal the following command to create new users.
 
-```js
+```shell
 php artisan mailcarrier:user
 ```
 
-<Image src="/images/create-user-on-install.png" alt="User creation on installation" />
+![User creation on installation](/images/create-user-on-install.png)
 
 You can choose to let the system generate a random password for you by leaving that field empty.
 
-### Social Authentication
+## Social Authentication
 
 If you would like to enable the social authentication instead of the regular one, you can choose it during the Setup Wizard or setup it later by running:
 
-```js
+```shell
 php artisan mailcarrier:social
 ```
 
 A list of providers will prompt to auto-install the needed dependencies and configuration.
 
-<Image src="/images/social-auth-providers.png" alt="Social authentication providers" />
+![Social authentication providers](/images/social-auth-providers.png)
 
 Once selected, configurations and additional dependencies will be added to your project. Further instructions will be shown to complete the installation.
 
-<Image src="/images/social-auth-instructions.png" alt="Social authentication instructions" />
+![Social authentication instructions](/images/social-auth-instructions.png)
 
-<Aside type="caution" title="Redirect URL">
-    The redirect URL must be your App URL with `/auth/callback` at the end.  
-    For convenience, you can use `"${APP_URL}/auth/callback"` as value to automatically inject the App URL, just be sure to properly set the `APP_URL` environment variable.
-</Aside>
+::: warning Redirect URL
+The redirect URL must be your App URL with `/auth/callback` at the end.  
+For convenience, you can use `"${APP_URL}/auth/callback"` as value to automatically inject the App URL, just be sure to properly set the `APP_URL` environment variable.
+:::
 
-#### Other providers
+### Other providers
 
 If your provider is not present in that list, don't worry! MailCarrier uses **Laravel Socialite** to handle social authentication, that means that you can choose from over **150 providers**!  
 
@@ -55,11 +54,11 @@ In the page of your provider you will find all the instructions to complete the 
 
 Finally, remember to set the `MAILCARRIER_SOCIAL_AUTH_DRIVER` in your `.env` file to reflect your provider name (all lowercase).  
 
-<Aside type="tip" title="Looking for a real example?">
-    We got you covered! Take a look at our recipe on [how to integrate Discord](/docs/examples/other-social-provider) as social authentication provider.
-</Aside>
+::: tip Looking for a real example?
+We got you covered! Take a look at our recipe on [how to integrate Discord](/docs/examples/other-social-provider) as social authentication provider.
+:::
 
-#### Granting access from social auth
+### Granting access from social auth
 
 By default, for security reason, every access from social authentication are **denied**. Of course you can customise and decide how and when a user should be allowed to sign in.  
 
@@ -89,6 +88,6 @@ MailCarrier::authorizeSocialAuth(function (\Laravel\Socialite\AbstractUser $user
 });
 ```
 
-<Aside type="tip" title="Inspect the user">
-    To inspect the content the current `$user` variable, try to write `dd($user);` inside your callback, before any return, and sign in!
-</Aside>
+::: tip Inspect the user
+To inspect the content the current `$user` variable, try to write `dd($user);` inside your callback, before any return, and sign in!
+:::

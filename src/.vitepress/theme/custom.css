@@ -15,3 +15,7 @@
   --vp-button-brand-active-bg: #4338ca; /* Indigo 700 */
   --vp-button-brand-active-border: #6366f1; /* Indigo 500 */
 }
+
+.custom-block a {
+  text-decoration: underline;
+}

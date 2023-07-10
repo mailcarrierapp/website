@@ -10,10 +10,10 @@ hero:
   actions:
     - theme: alt
       text: View on GitHub
-      link: /api-examples
+      link: https://github.com/mailcarrierapp/mailcarrier
     - theme: brand
       text: Get started
-      link: /markdown-examples
+      link: /docs/getting-started/installation
 
 features:
   - title: 🦄 Open Source

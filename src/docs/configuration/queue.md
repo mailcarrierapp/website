@@ -1,14 +1,13 @@
 ---
-title: Queue
+title: Queue configuration
 description: Configuration of queue
-layout: ../../../layouts/MainLayout.astro
 ---
-import Aside from '~/components/Aside.astro';
-import Image from '~/components/Image.astro';
+
+# Queue configuration
 
 All the configuration variables refers to `config/mailcarrier.php` file.
 
-### `enabled`
+## `enabled`
 
 Define if the queue system is enabled and can be used or not.  
 If the queue is not enabled, trying to send an email with the `enqueue: true` parameter will send it anyway sync.
@@ -28,7 +27,7 @@ If the queue is not enabled, trying to send an email with the `enqueue: true` pa
     // ...
 ```
 
-### `force`
+## `force`
 
 When true, all the emails will be sent through a queue also when the `enqueue` parameter is not defined or set to false.  
 Can be easily adjusted for different environments with the `MAILCARRIER_FORCE_QUEUE` environment variables.
@@ -51,9 +50,9 @@ Can be easily adjusted for different environments with the `MAILCARRIER_FORCE_QU
     // ...
 ```
 
-### `name`
+## `name`
 
-If using [multiple queues](https://laravel.com/docs/9.x/queues#connections-vs-queues) you can define the queue name here.  
+If using [multiple queues](https://laravel.com/docs/queues#connections-vs-queues) you can define the queue name here.  
 Leaving it to `null` will use the default queue which is normal and fine for most of the cases.
 
 ```php
@@ -74,7 +73,7 @@ Leaving it to `null` will use the default queue which is normal and fine for mos
     // ...
 ```
 
-### `connection`
+## `connection`
 
 Define a different connection name to process your async emails.  
 Leaving it to `null` will use the default queue connection defined by your `QUEUE_CONNECTION` environment variable, which is fine most of the cases.

@@ -63,11 +63,12 @@ export default defineConfig({
       light: '/images/logos/logo-dark.svg',
       dark: '/images/logos/logo-light.svg',
     },
-
-    sidebar,
-
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
-    ]
+      { icon: 'github', link: 'https://github.com/mailcarrierapp/mailcarrier' },
+    ],
+    editLink: {
+      pattern: 'https://github.com/mailcarrierapp/website/edit/master/src/:path',
+    },
+    sidebar,
   }
 })

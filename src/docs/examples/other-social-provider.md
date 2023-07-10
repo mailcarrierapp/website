@@ -1,15 +1,14 @@
 ---
-title: Authentication
-description: Define how your users will login into MailCarrier
-layout: ../../../layouts/MainLayout.astro
+title: "Example: Installing a social provider"
 ---
-import Image from '~/components/Image.astro';
+
+# Example: Installing a social provider
 
 Let's integrate **Discord** to see how simple is that. Please find all the needed instructions also on the relative [Socialite Discord page](https://socialiteproviders.com/Discord/).
 
 1. Install the provider by running `composer require socialiteproviders/discord`.
 
-<Image src="/images/social-auth-other-require.png" alt="Require other social authentication provider" />
+![Require other social authentication provider](/images/social-auth-other-require.png)
 
 2. Open your `config/services.php` file and add the needed data. You can find it in the Socialite page linked above.
 
@@ -22,7 +21,7 @@ Let's integrate **Discord** to see how simple is that. Please find all the neede
 ```
 3. Add the new environment variables to your `.env` file.
 
-```js
+```bash
 MAILCARRIER_SOCIAL_AUTH_DRIVER=discord
 DISCORD_CLIENT_ID=12345
 DISCORD_CLIENT_SECRET=xxxx

@@ -1,10 +1,9 @@
 ---
 title: Middleware
 description: Intercept and apply a middleware before and after sending a mail 
-layout: ../../../layouts/MainLayout.astro
 ---
-import Aside from '~/components/Aside.astro';
-import Image from '~/components/Image.astro';
+
+# Middleware
 
 MailCarrier provides a "middleware" to call and apply your custom code *before* and *after* sending an email. This could be useful for logging purposes or change at runtime some configuration values.  
 
@@ -18,9 +17,9 @@ MailCarrier::sending(function (GenericMailDto $mail, \Closure $next): void {
 });
 ```
 
-<Aside type="danger" title="Throwing exceptions">
+::: danger Throwing exceptions
 Never throw exceptions inside your `sending` middleware because it could stop your queue worker!
-</Aside>
+:::
 
 The only important thing you have to remember is to call `$next()` to proceed with the flow and send the email.  
 For example you could prevent sending emails when the sender is not from a specific domain:
@@ -35,9 +34,9 @@ MailCarrier::sending(function (GenericMailDto $mail, \Closure $next): void {
 });
 ```
 
-<Aside type="note" title="Nullable properties">
+::: info Nullable properties
 Please note that some properties of the DTO are nullable, that's why we use the [null-safe operator](https://php.watch/versions/8.0/null-safe-operator) to access the sender email.
-</Aside>
+:::
 
 You can, eventually, pass a `GenericMailDto` instance to the `$next()` callback to override the original. For example, you can force the sender and always add the template name as mail tag:
 
@@ -53,7 +52,7 @@ MailCarrier::sending(function (GenericMailDto $mail, \Closure $next): void {
 });
 ```
 
-### Sync Middleware
+## Sync Middleware
 The `sending` middleware happens before and after the mail sending, meaning that it could happens even in the background queue if enabled.  
 As said earlier, you must never throw exceptions inside that middleware, that's why MailCarrier provides a `beforeSending` hook that always runs in foreground (API call) and where you can add custom validation, throwing exceptions etc.
 
@@ -73,4 +72,4 @@ MailCarrier::beforeSending(function (GenericMailDto $mail): void {
 
 Now, if you try to hit the `/api/send` endpoint it will throw an error:
 
-<Image src="/images/example-block-sender-hook.png" alt="Block sender from beforeSending hook" />
+![Block sender from beforeSending hook](/images/example-block-sender-hook.png)

@@ -1,18 +1,17 @@
 ---
 title: Errors
 description: Errors and Exceptions handling 
-layout: ../../../layouts/MainLayout.astro
 ---
-import Aside from '~/components/Aside.astro';
-import Image from '~/components/Image.astro';
+
+# Errors
 
 When something goes wrong, for example a variable is not found, MailCarrier throws an exception specific for that error.  
-Thanks to [Laravel error handling](https://laravel.com/docs/9.x/errors) you can intercept them and do whatever you want, for example you could intercept the failure of sending emails and log it on Discord.
+Thanks to [Laravel error handling](https://laravel.com/docs/errors) you can intercept them and do whatever you want, for example you could intercept the failure of sending emails and log it on Discord.
 
 Open your `app/Exceptions/Handler.php` and inside the `register()` method let's the use `reportable()` hook. Inside that callback you can pass the Exceptions that you want to intercept, in this case `SendingFailedException`.
 
 Inside every MailCarrier exception you will have a (nullable) `log` property where you can access the details of the event. In this case we're going to use the `trigger` field to understand what's the service to notify.  
-With this info and the [**Http client** of Laravel](https://laravel.com/docs/9.x/http-client) we'll fire a Discord webhook.
+With this info and the [**Http client** of Laravel](https://laravel.com/docs/http-client) we'll fire a Discord webhook.
 
 ```php
 use Illuminate\Support\Facades\Http;
@@ -55,7 +54,7 @@ $this->reportable(function (MailCarrierException $e) {
 });
 ```
 
-### Available Exceptions
+## Available Exceptions
 
 All exceptions refers to the namespace `MailCarrier\Exceptions`.
 

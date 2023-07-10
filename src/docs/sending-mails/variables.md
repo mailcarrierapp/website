@@ -1,15 +1,14 @@
 ---
 title: Recipient
 description: Define the recipient 
-layout: ../../../layouts/MainLayout.astro
 ---
-import Aside from '~/components/Aside.astro';
-import Image from '~/components/Image.astro';
+
+# Variables
 
 Variables allows to dynamically serve the same template with different data, for example for different users.  
 They're just an object, so you can use whatever type you want and with whatever depth. For example, we could define the **user name** (*string*), the **purchased items** (*array*) and an *optional* **call to action** (*object*).
 
-```js
+```json
 {
   "subject": "Thank you for your purchase"
   "recipient": "foo@example.org",

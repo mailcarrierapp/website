@@ -1,32 +1,31 @@
 ---
 title: Queue
 description: Send emails in the background 
-layout: ../../../layouts/MainLayout.astro
 ---
-import Aside from '~/components/Aside.astro';
-import Image from '~/components/Image.astro';
+
+# Queue
 
 Sending an email can be an expensive - in terms of time - operation, for example because it relies on SMTP and the connection could take several seconds.  
 For this reason you can put the job in the background through a **queue**, so the API endpoint will be faster and the operation will be not blocking.  
 
-To get started, you can follow the [official Laravel documentation](https://laravel.com/docs/9.x/queues) to understand how to configure your preferred driver, such as your **database**, **Redis**, **Amazon SQS** or **Beanstalkd**.
+To get started, you can follow the [official Laravel documentation](https://laravel.com/docs/queues) to understand how to configure your preferred driver, such as your **database**, **Redis**, **Amazon SQS** or **Beanstalkd**.
 
 Then start your queue worker:
 
-```js
+```bash
 php artisan queue:work
 ```
 
-<Aside type="note" title="Worker daemon">
+::: info Worker daemon
 Be sure to use a service such as Supervisor to keep your worker up and to correctly restart your worker on deploy with `php artisan queue:restart`.  
-Read more here: [Queue Workers & Deployments](https://laravel.com/docs/9.x/queues#queue-workers-and-deployment).
-</Aside>
+Read more here: [Queue Workers & Deployments](https://laravel.com/docs/queues#queue-workers-and-deployment).
+:::
 
-### Usage
+## Usage
 
 To tell MailCarrier that an email should be enqueued you can pass the `enqueue: true` parameter to the API endpoint.
 
-```js
+```json
 {
   "enqueue": true,
   "recipient": "foo@example.org",
@@ -78,7 +77,7 @@ If, on the other side, you don't want at all emails to be enqueued (*why, though
     // ... Other keys
 ```
 
-### Retries
+## Retries
 
 Failed emails will be saved in the queue and retried after specific, fixed, range of times.  
 Since the error could be caused by a misconfiguration or a temporarily issue in your email provider, these values should cover every possible issue and allows you to fix it.  

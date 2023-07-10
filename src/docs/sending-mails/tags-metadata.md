@@ -1,10 +1,9 @@
 ---
 title: Tags & Metadata
 description: Set tags and metadata to your email 
-layout: ../../../layouts/MainLayout.astro
 ---
-import Aside from '~/components/Aside.astro';
-import Image from '~/components/Image.astro';
+
+# Tags & Metadata
 
 Some SMTP provider, such as [MailGun](https://documentation.mailgun.com/en/latest/api-tags.html), accept tags and metadata to track emails and create metrics.  
 
@@ -12,7 +11,7 @@ Some SMTP provider, such as [MailGun](https://documentation.mailgun.com/en/lates
 
 Tags are just an array of string, nothing fancy.
 
-```bash
+```shell
 curl -XPOST \
   -H 'Authorization: Bearer xxxxx' \
   -H "Content-type: application/json" \
@@ -20,9 +19,9 @@ curl -XPOST \
   http://localhost:8000/api/send
 ```
 
-### Metadata
+## Metadata
 
-```bash
+```shell
 curl -XPOST \
   -H 'Authorization: Bearer xxxxx' \
   -H "Content-type: application/json" \

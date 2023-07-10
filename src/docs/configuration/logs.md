@@ -1,14 +1,13 @@
 ---
-title: Logs
+title: Logs configuration
 description: Configuration of logs
-layout: ../../../layouts/MainLayout.astro
 ---
-import Aside from '~/components/Aside.astro';
-import Image from '~/components/Image.astro';
+
+# Logs configuration
 
 All the configuration variables refers to `config/mailcarrier.php` file.
 
-### `prunable_period`
+## `prunable_period`
 
 Define for how long the logs should be stored. You can use a human friendly syntax such as `3 months` (default), `1 year` and so on.
 
@@ -27,10 +26,10 @@ Define for how long the logs should be stored. You can use a human friendly synt
 ],
 ```
 
-<Aside type="tip" title="Prune the logs">
+::: tip Prune the logs
 Pruning is not done automatically, but you must run in a cronjob, or manually, the command:
 
-```js
+```shell
 php artisan model:prune --model=MailCarrier\Models\Log
 ```
-</Aside>
+:::

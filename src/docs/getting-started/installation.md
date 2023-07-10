@@ -44,7 +44,7 @@ DB_USERNAME=mailcarrier
 DB_PASSWORD=supersecretpassword
 ```
 
-To know more about database configuration, you can read it on [Laravel docs](https://laravel.com/docs/9.x/database#introduction).
+To know more about database configuration, you can read it on [Laravel docs](https://laravel.com/docs/database#introduction).
 
 ### 3. Complete your installation
 Inside your terminal run the last command to complete the process:

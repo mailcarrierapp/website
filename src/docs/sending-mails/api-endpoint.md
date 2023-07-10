@@ -1,14 +1,13 @@
 ---
 title: API Endpoint
 description: Learn how to use the API endpoint to send emails
-layout: ../../../layouts/MainLayout.astro
 ---
-import Aside from '~/components/Aside.astro';
-import Image from '~/components/Image.astro';
+
+# API Endpoint
 
 To start sending emails, after you [created a template](/docs/getting-started/your-first-template), you should invoke the `POST /api/send` endpoint, for example:
 
-```bash
+```shell
 curl -XPOST \
   -H 'Authorization: Bearer xxxxx' \
   -H "Content-type: application/json" \
@@ -142,12 +141,12 @@ That's it. There are a few other available fields too:
   </tbody>
 </table>
 
-### Sender
+## Sender
 
 By default MailCarrier will use, as sender, the values defined by your environment variables `MAIL_FROM_ADDRESS` and `MAIL_FROM_NAME` (which can be empty).  
 You can override these values at runtime when making an API call by defining the `sender` property:
 
-```js
+```json
 {
   // Other variables
   "sender": "sender@example.org"
@@ -156,7 +155,7 @@ You can override these values at runtime when making an API call by defining the
 
 Or, specifying the name too:
 
-```js
+```json
 {
   // Other variables
   "sender": {
@@ -166,11 +165,11 @@ Or, specifying the name too:
 }
 ```
 
-### Cc & Bcc
+## Cc & Bcc
 
 You can specify a **cc** or **bcc** by providing their relative keys to your payload:
 
-```js
+```json
 {
   // Other variables
   "cc": "cc@example.org",
