@@ -37,7 +37,7 @@ features:
 ---
 
 <style>
-#VPContent {
+#VPContent.is-home {
   background-image: radial-gradient(circle at center,#3730a3,#1f2937,#111827 100%);
 }
 
