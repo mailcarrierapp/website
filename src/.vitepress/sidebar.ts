@@ -44,4 +44,9 @@ export default [
       { text: 'Installing a social provider', link: '/docs/examples/other-social-provider' },
     ],
   },
+
+  {
+    text: 'Upgrading from v1',
+    link: '/docs/upgrading-from-v1'
+  },
 ];
