@@ -33,3 +33,25 @@ Pruning is not done automatically, but you must run in a cronjob, or manually, t
 php artisan model:prune --model=MailCarrier\Models\Log
 ```
 :::
+
+
+## `table_refresh_poll`
+
+Define the refresh poll interval for the Log tables in the dashboard UI. Set it to `null` to disable completely the auto-refresh.
+
+```php
+'logs' => [
+    ...
+
+    /*
+    |--------------------------------------------------------------------------
+    | Table refresh time
+    |--------------------------------------------------------------------------
+    |
+    | The polling time to automatically refresh the logs table.
+    | Set it to null to disable the poll refresh.
+    |
+    */
+    'table_refresh_poll' => '5s',
+],
+```
