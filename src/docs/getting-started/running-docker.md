@@ -8,27 +8,35 @@ description: Install MailCarrier via Docker
 Docker images are hosted under the [`mailcarrier/mailcarrier`](https://hub.docker.com/repository/docker/mailcarrier/mailcarrier) name.  
 
 ```shell
-docker run -p 80:80 -ti mailcarrier/mailcarrier
+docker run -e APP_KEY="base64:$(head -c 32 /dev/urandom | base64)" -p 80:80 --name mailcarrier_app mailcarrier/mailcarrier
 ```
 
 ## Security
 
-By default the app runs with a public "App Key" for testing purposes; it's being used to encrypt everything in MailCarrier, so you should use a <u>random, unique, string</u>.  
-To generate a string, you can run the following command inside your container:
+As you may have noticed from the command above we generate a random `APP_KEY` (32 bytes) at every run, but this is just for testing purposes.  
+That key is being used to encrypt everything in MailCarrier, so you should generate a static, <u>private random string</u> to pass it to every container run.  
 
 ```shell
-php artisan key:generate --show
+echo "base64:$(head -c 32 /dev/urandom | base64)"
 ```
 
-Then pass the given value as an env value when running your app:
+Then pass the given value as an env value when running your app (be sure it includes the `base64:` prefix):
 
 ```shell
-docker run -e APP_KEY=mysecretstring -p 80:80 mailcarrier/mailcarrier
+docker run -e APP_KEY="..." -p 80:80 --name mailcarrier_app mailcarrier/mailcarrier
+```
+
+## Creating the first user
+
+You can leaverage the same MailCarrier commands as the classic installation to create your first user and just follow the wizard:
+
+```shell
+docker exec /bin/sh -c "php artisan mailcarrier:user"
 ```
 
 ## Configuration
 
-Always because of testing purposes, the image runs on a volatile `sqlite` database, but you should definitely connect the app the a proper, persistent mounted database, such as **MySQL** or **PostgreSQL**.  
+By default MailCarrier container runs on an ephemeral SQLite instance for testing purposes.  If you don't bind that database to a volume, or use a persistent classic database such as **MySQL** or **PostgreSQL**, your changes could be lost with container shutdowns.  
 You can find an example of the environment variables to customise the app in the [`.env.example` file](https://github.com/mailcarrierapp/app/blob/master/.env.example), for example to connect a database and a redis queue it would be something like:
 
 ```shell
