@@ -1,21 +1,51 @@
 :root {
-  --vp-c-brand: #4f46e5; /* Indigo 600 */
-  --vp-button-brand-border: #4338ca; /* Indigo 400 */
-  --vp-button-brand-hover-bg: #4338ca; /* Indigo 700 */
-  --vp-button-brand-hover-border: #6366f1; /* Indigo 500 */
-  --vp-button-brand-active-bg: #3730a3; /* Indigo 800 */
-  --vp-button-brand-active-border: #312e81; /* Indigo 900 */
-}
-
-:root.dark {
   --vp-c-brand: #6366f1; /* Indigo 500 */
+  --vp-home-hero-name-color: #6366f1; /* Indigo 500 */
   --vp-button-brand-border: #a5b4fc; /* Indigo 300 */
   --vp-button-brand-hover-bg: #4f46e5; /* Indigo 600 */
   --vp-button-brand-hover-border: #818cf8; /* Indigo 400 */
   --vp-button-brand-active-bg: #4338ca; /* Indigo 700 */
   --vp-button-brand-active-border: #6366f1; /* Indigo 500 */
+  --vp-c-bg: #0e0d0d;
+  --vp-c-text-2: rgba(255, 255, 255, 0.8);
+}
+
+html,
+body {
+  background-color: #000000;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='648' height='77.8' viewBox='0 0 1000 120'%3E%3Cg fill='none' stroke='%230A0A0A' stroke-width='6.1' %3E%3Cpath d='M-500 75c0 0 125-30 250-30S0 75 0 75s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 45c0 0 125-30 250-30S0 45 0 45s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 105c0 0 125-30 250-30S0 105 0 105s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 15c0 0 125-30 250-30S0 15 0 15s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500-15c0 0 125-30 250-30S0-15 0-15s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 135c0 0 125-30 250-30S0 135 0 135s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+.VPHomeHero {
+  text-align: center;
+}
+
+.VPHomeHero > .container > .main {
+  width: 100%;
+}
+
+.VPHomeHero > .container > .main > * {
+  max-width: initial;
+}
+
+.VPHomeHero > .container > .main > .tagline {
+  font-size: 1.3rem;
+}
+
+.VPHomeHero > .container > .main > .actions {
+  justify-content: center;
+}
+
+.VPHomeHero > .container > .main > .actions > .action > .VPButton {
+  border-radius: 10px;
 }
 
 .custom-block a {
   text-decoration: underline;
+}
+
+@media and (min-width: 768px) {
+  .item.grid-1.5 {
+    width: calc(100% / 1.5);
+  }
 }

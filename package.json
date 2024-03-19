@@ -1,5 +1,6 @@
 {
   "name": "@mailcarrier/website",
+  "type": "module",
   "scripts": {
     "dev": "npx vitepress dev src",
     "build": "npx vitepress build src",
@@ -7,6 +8,6 @@
   },
   "devDependencies": {
     "sitemap": "^7.1.1",
-    "vitepress": "^1.0.0-beta.5"
+    "vitepress": "^1.0.0-rc.45"
   }
 }

@@ -1,7 +1,9 @@
+import { fileURLToPath } from 'node:url';
 import { defineConfig } from 'vitepress';
 import head from './head';
-import sidebar from './sidebar';
 import onBuildEnd from './onBuildEnd';
+import sidebar from './sidebar';
+import transformHtml from './transformHtml';
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -9,6 +11,8 @@ export default defineConfig({
   description: 'Design emails once, send them everywhere',
   lastUpdated: true,
   buildEnd: onBuildEnd,
+  transformHtml: transformHtml,
+  appearance: 'force-dark',
   // @ts-ignore
   head,
   themeConfig: {
@@ -27,5 +31,30 @@ export default defineConfig({
       provider: 'local',
     },
     sidebar,
+  },
+  vite: {
+    resolve: {
+      alias: [
+        {
+          find: /^.*\/VPFeatures\.vue$/,
+          replacement: fileURLToPath(
+            new URL('./components/VPFeatures.vue', import.meta.url)
+          )
+        },
+        {
+          find: /^.*\/VPFeature\.vue$/,
+          replacement: fileURLToPath(
+            new URL('./components/VPFeature.vue', import.meta.url)
+          )
+        },
+        {
+          find: /^.*\/VPImage\.vue$/,
+          replacement: fileURLToPath(
+            new URL('./components/VPImage.vue', import.meta.url)
+          )
+        }
+      ]
+    }
   }
+
 })
