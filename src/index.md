@@ -8,12 +8,12 @@ hero:
   name: "MailCarrier"
   tagline: Design emails once, send them everywhere
   actions:
-    - theme: alt
-      text: View on GitHub
-      link: https://github.com/mailcarrierapp/mailcarrier
     - theme: brand
       text: Get started
       link: /docs/getting-started/installation
+    - theme: alt
+      text: View on GitHub
+      link: https://github.com/mailcarrierapp/mailcarrier
 
 features:
   - title: No vendor lock-in

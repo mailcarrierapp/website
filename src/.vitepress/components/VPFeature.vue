@@ -83,16 +83,6 @@ defineProps<{
   margin-bottom: 20px;
 }
 
-@media (min-width: 768px) {
-  .item.grid-1\.5 .box,
-  .item.grid-2 .box,
-  .item.grid-1 .box {
-    flex-direction: row;
-    gap: 20px;
-    align-items: center;
-  }
-}
-
 .icon {
   display: flex;
   justify-content: center;
@@ -110,9 +100,6 @@ defineProps<{
   line-height: 24px;
   font-size: 18px;
   font-weight: 600;
-}
-
-.box:not(.wide):not(.half):not(.full) .title {
   text-align: center;
 }
 
@@ -139,5 +126,21 @@ defineProps<{
 
 .link-text-icon {
   margin-left: 6px;
+}
+
+@media (min-width: 768px) {
+  .item.grid-1\.5 .box,
+  .item.grid-2 .box,
+  .item.grid-1 .box {
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .box.wide .title,
+  .box.half .title,
+  .box.full .title {
+    text-align: left;
+  }
 }
 </style>

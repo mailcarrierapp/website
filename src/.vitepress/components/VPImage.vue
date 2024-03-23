@@ -44,7 +44,7 @@ html:not(.dark) .VPImage.dark {
   display: none;
 }
 
-.VPFeature .box:not(.wide) .VPImage {
+.VPFeature .box .VPImage {
   margin-left: auto;
   margin-right: auto;
 }
@@ -53,6 +53,7 @@ html:not(.dark) .VPImage.dark {
   .box.half .VPImage,
   .box.wide .VPImage {
     margin-bottom: 0;
+    margin-left: 0;
   }
 }
 </style>
