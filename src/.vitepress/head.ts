@@ -94,10 +94,19 @@ export default [
   ],
   [
     'script',
+    {},
+    `(function () {
+        window.counterscale = {
+            q: [["set", "siteId", "mailcarrier.app"], ["trackPageview"]],
+        };
+    })();`
+  ],
+  [
+    'script',
     {
+      id: 'counterscale-script',
       defer: 'defer',
-      'data-domain': 'mailcarrier.app',
-      src: 'https://plausible.io/js/plausible.js',
+      src: 'https://counterscale.theraloss.com/tracker.js',
     },
   ],
 ];
